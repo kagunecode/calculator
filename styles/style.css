@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar,
+.footer {
+    display: flex;
+    font-weight: bold;
+    background-color: #E63946;
+    height: 80px;
+    align-items: center;
+    width: 100vw;
+    justify-content: center;
+    color: black;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+    color: white;
+}
+
+.logo {
+    font-weight: bolder;
+    font-size: 40px;
+    font-style: italic;
+    transition-duration: 0.2s;
+    animation-duration: 0.2s;
+}
+
+.logo:hover {
+    cursor: pointer;
+    text-shadow: 10px 0 20px rgba(255, 255, 255, 0.9);
+}
+
+.container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer {
+    font-style: italic;
+}
+
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #F1FAEE;
+    min-height: 700px;
+    flex-basis: 600px;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 10px;
+    border: solid;
+}
+
+.keys,
+.clear,
+.operator,
+.equal {
+    display: flex;
+    background-color: white;
+    min-width: auto;
+    min-height: 70px;
+    flex-basis: 20%;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border: solid;
+    animation-duration: 0.3s;
+    transition-duration: 0.2s;
+    background-color: #A8DADC;
+    border-radius: 12px;
+}
+
+.keys:hover,
+.clear:hover,
+.operator:hover,
+.equal:hover {
+    scale: 1.1;
+    box-shadow: 0 10px 15px 0 rgba(255,255,255,.2);
+    cursor: pointer;
+}
+
+.screen {
+    display: flex;
+    flex-basis: 98%;
+    min-height: 90px;
+    min-width: auto;
+    border: solid;
+    background-color: white;
+    box-shadow: 0 10px 15px 0 rgba(0,0,0,.2);
+    font-size: 60px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 12px;
+}
