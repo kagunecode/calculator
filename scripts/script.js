@@ -33,13 +33,18 @@ function recordOperation (e) {
     screen.innerText = "";
     switch (operation) {
         case "+":
+            if (previousOperation == "=") {
+                previousNumber = 0;
+            }
             currentNum = previousNumber + +operationNum; 
             screen.innerText = currentNum;
             newCycle = 1; 
             break; 
             
         case "-":
-            if (currentNum == 0) {
+            if (previousOperation == "=" && currentNum != 0) {
+                previousNumber = 0;
+            } else if (currentNum == 0) {
                 currentNum = operationNum;
             } else {
                 currentNum -= +operationNum; 
@@ -49,18 +54,25 @@ function recordOperation (e) {
             break;
 
         case "*":
-            currentNum *= +operationNum;
-            if (currentNum == 0) {
-                screen.innerText = operationNum;
+            if (previousOperation == "=" && currentNum != 0) {
+                previousNumber = 1;
+            } else if (currentNum == 0) {
                 currentNum = operationNum;
             } else {
-                screen.innerText = currentNum;
+                currentNum *= +operationNum;
             }
+            screen.innerText = currentNum;
             newCycle = 1; 
             break;
 
         case "/":
-            currentNum /= +operationNum; 
+            if (previousOperation == "=" && previousNumber != 0) {
+                previousNumber = 1;
+            } else if (currentNum == 0) {
+                currentNum = operationNum;
+            } else {
+                currentNum /= +operationNum;
+            }
             screen.innerText = currentNum;
             newCycle = 1; 
             break;
@@ -74,7 +86,9 @@ function recordOperation (e) {
                 currentNum *= operationNum;
             } else if (previousOperation == "/") {
                 currentNum /= operationNum;
-            } 
+            } else {
+                currentNum = currentNum;
+            }
             screen.innerText = currentNum;
             newCycle = 1;
             break;
